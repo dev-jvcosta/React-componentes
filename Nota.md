@@ -25,3 +25,7 @@ CDNs utilizados no projeto Link e CDNs:
 ## Sobre o Babel
 
 O Babel é um compilador JavaScript, ou seja, um programa que lê o seu código fonte e gera um novo código como resultado. No CodeConnect estamos usando especificamente a versão babel-standalone, uma versão que pode ser usada em ambientes que não são o Node.js, como navegadores e outros sistemas.
+
+```javascript
+
+```

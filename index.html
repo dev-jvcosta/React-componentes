@@ -13,10 +13,6 @@
     <link rel="stylesheet" href="./styles/PaginaDeLogin.css" />
     <link rel="stylesheet" href="./styles/CampoDeDigitacao.css" />
     <title>Login | CodeConnect</title>
-  </head>
-
-  <body>
-    <div id="root"></div>
     <!---------------- CDNs Script -------------------->
     <!--REACT-->
     <script
@@ -24,38 +20,64 @@
       integrity="sha512-8Q6Y9XnTbOE+JNvjBQwJ2H8S+UV4uA6hiRykhdtIyDYZ2TprdNmWOUaKdGzOhyr4dCyk287OejbPvwl7lrfqrQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      async
     ></script>
-
     <!--React DOM-->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"
       integrity="sha512-MOCpqoRoisCTwJ8vQQiciZv0qcpROCidek3GTFS6KTk2+y7munJIlKCVkFCYY+p3ErYFXCjmFjnfTTRSC1OHWQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      async
     ></script>
-
     <!--Babel-->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.0/babel.min.js"
       integrity="sha512-2nvFgDDkDQZAO7x0iuupGiKpK+/qm7+bjzIEZBCn3o7v60+ZaPoe5x4sb21xahHfI7RCC9emLVY1k4kvap9RyQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      async
     ></script>
-    <!-- ------------------------------------------------>
+    <!-------------------------------------------------->
+  </head>
 
-    <!-- Criando componente de Titulo -->
+  <body>
+    <div id="root"></div>
+
+    <!-- Adiciona o reconhecimento dos componetens no HTMl -->
     <script type="text/babel">
-      // adiciona o reconhecimento dos componetens no HTMl
-      function Titulo() {
-        return <h1 className=".form__titulo">Login</h1>;
-      }
+      /* -------------------------- AREA DOS COMPONENTES -------------------------- */
+      const Titulo = () => {
+        return <h1 className="form__titulo">Login</h1>;
+      };
 
-      function Subtitulo() {
-        return <h2 className=".form__texto">Boas-vindas! Faça seu login</h2>;
-      }
+      const Subtitulo = () => {
+        return <h2 className="form__texto">Boas-vindas! Faça seu login</h2>;
+      };
 
-      /*  Serve para criar a raiz do elemento root, id representado no html dentro de uma div*/
-      ReactDOM.createRoot(document.getElementById("root")).render(<Titulo />);
+      const PaginaDeLogin = () => {
+        return (
+          <div className="container-login">
+            <img
+              src="./img/imagem-login.png"
+              alt="mulher negra de cabelos crespos usando oculos e utilizando o pc, além do logo codeconect"
+            />
+            <section>
+              <form>
+                <Titulo />
+                <Subtitulo />
+              </form>
+            </section>
+          </div>
+        );
+      };
+      /* ------------------------------------------------------------------------ */
+
+      /* -------------------------- AREA DE RENDERIZAÇÃO -------------------------- */
+      ReactDOM.createRoot(document.getElementById("root")).render(
+        <PaginaDeLogin />
+      );
+      /* ------------------------------------------------------------------------ */
     </script>
 
     <!-- Criando componente Subtitulo -->
