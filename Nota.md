@@ -29,3 +29,13 @@ O Babel é um compilador JavaScript, ou seja, um programa que lê o seu código 
 ```javascript
 
 ```
+
+ **Qual é o argumento que deve ser passado para o método `ReactDOM.createRoot`?**
+
+Resp.: Um elemento que representa onde o seu aplicativo será renderizado.
+
+"Você pode obter esse elemento usando o método document.getElementById, que recebe o id do elemento e retorna o elemento correspondente. Por exemplo, se você tem um elemento HTML com o id root, você pode passar document.getElementById('root') como argumento para o método ReactDOM.createRoot"
+
+**createRoot**: Cria uma raiz do React, que é um ponto de entrada para o seu aplicativo React no DOM.
+
+**render**: renderiza um elemento React no DOM, usando a raiz do React criada pelo método createRoot.
