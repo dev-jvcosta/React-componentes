@@ -47,25 +47,82 @@
     <!-- Adiciona o reconhecimento dos componetens no HTMl -->
     <script type="text/babel">
       /* -------------------------- AREA DOS COMPONENTES -------------------------- */
-      const Titulo = () => {
-        return <h1 className="form__titulo">Login</h1>;
+      const Titulo = ({ children }) => {
+        return <h1 className="form__titulo">{children}</h1>;
       };
 
-      const Subtitulo = () => {
-        return <h2 className="form__texto">Boas-vindas! Faça seu login</h2>;
+      const Subtitulo = ({ children }) => {
+        return <h2 className="form__texto">{children}</h2>;
+      };
+
+      // Recebe as informaçoes passadas form>div
+      const CampoDeDigitacao = ({
+        label,
+        tipo,
+        placehorder,
+        value,
+        setValor,
+      }) => {
+        return (
+          <div className="form__campo-digitacao">
+            <label for="email">{label}</label>
+            <input
+              type={tipo}
+              placehorder={placehorder}
+              required
+              id="email"
+              value={value}
+              // A cada mudnça altere o valor
+              onChange={(evento) => setValor(evento.target.value)}
+            />
+          </div>
+        );
+      };
+
+      const Botao = ({ children }) => {
+        return (
+          <button type="submit" className="form__botao">
+            {children}
+          </button>
+        );
       };
 
       const PaginaDeLogin = () => {
+        let email = "joao@email.com";
+
+        function substituiValorDoCampo(novoValor) {
+          email = novoValor;
+          console.log(email);
+        }
+
         return (
           <div className="container-login">
             <img
               src="./img/imagem-login.png"
               alt="mulher negra de cabelos crespos usando oculos e utilizando o pc, além do logo codeconect"
             />
+
             <section>
               <form>
-                <Titulo />
-                <Subtitulo />
+                <Titulo>Login</Titulo>
+                <Subtitulo>Boas-vindas! Faça seu login</Subtitulo>
+
+                {/*CAMPO DE USER */}
+                <CampoDeDigitacao
+                  label="E-mail ou usuário"
+                  placehorder="Digite o seu e-mail"
+                  tipo="email"
+                  value={email}
+                  setValor={substituiValorDoCampo}
+                />
+                {/*CAMPO DE PASSWORD*/}
+                <CampoDeDigitacao
+                  label="Digite sua senha"
+                  tipo="password"
+                  placehorder="Digite sua senha"
+                />
+
+                <Botao>Login</Botao>
               </form>
             </section>
           </div>
